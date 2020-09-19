@@ -31,7 +31,7 @@ review.LaunchReview();
 ```
 
 #### Android Project:
-For the Android part, add the [PlayCore Nuget package](https://www.nuget.org/packages/PlayCore/) to your Android project, and then add the Custom Renderer for the IInAppReview interface, naming it as [`InAppReviewRenderer.cs`](https://gist.github.com/saamerm/bc3f7bd9e96bd4b027ddfaec3a0876a8) in your Droid project.
+For the Android part, add the [PlayCore Nuget package](https://www.nuget.org/packages/PlayCore/) to your Android project, and then add the Custom Renderer for the IInAppReview interface. You can just add this [`InAppReviewRenderer.cs`](https://gist.github.com/saamerm/bc3f7bd9e96bd4b027ddfaec3a0876a8) to your Droid project.
 
 #### Testing
 Testing in-app reviews is tricky on Android, just as it is on iOS. There are many limitations to being able to test your app as you can [see here](https://developer.android.com/guide/playcore/in-app-review/test). Regardless of what you try, you won't be able to see the In-App review UI when built and distributed manually. You have to download the app from the Play Store, in order to see the UI. So, the easiest way to test this is by using Android's "Internal App Sharing"
