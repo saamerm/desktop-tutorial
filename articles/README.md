@@ -14,7 +14,7 @@ For Xamarin.Forms developers, there's two parts to implement this:
 
 #### Core Project
 
-The core code is pretty straight-forward to implement. We first create an `IInAppReview.cs` Interface through which we will communicate with the Renderer. Just replace NAMESPACE with your actual namespace:
+The core code is pretty straight-forward to implement. We first create an `IInAppReview.cs` Interface through which we will communicate with the Service. Just replace NAMESPACE with your actual namespace:
 ```
 namespace NAMESPACE
 {
@@ -31,7 +31,7 @@ review.LaunchReview();
 ```
 
 #### Android Project:
-For the Android part, add the [PlayCore Nuget package](https://www.nuget.org/packages/PlayCore/) to your Android project, and then add the Custom Renderer for the IInAppReview interface. You can just add this [`InAppReviewRenderer.cs`](https://gist.github.com/saamerm/bc3f7bd9e96bd4b027ddfaec3a0876a8) to your Droid project.
+For the Android part, add the [PlayCore Nuget package](https://www.nuget.org/packages/PlayCore/) to your Android project, and then add the Custom Service for the IInAppReview interface. You can just add this [`InAppReviewService.cs`](https://gist.github.com/saamerm/bc3f7bd9e96bd4b027ddfaec3a0876a8) to your Droid project.
 
 #### Testing
 Testing in-app reviews is tricky on Android, just as it is on iOS. There are many limitations to being able to test your app as you can [see here](https://developer.android.com/guide/playcore/in-app-review/test). Regardless of what you try, you won't be able to see the In-App review UI when built and distributed manually. You have to download the app from the Play Store, in order to see the UI. So, the easiest way to test this is by using Android's "Internal App Sharing"
@@ -42,4 +42,4 @@ Testing in-app reviews is tricky on Android, just as it is on iOS. There are man
 #### Back story
 Some of you might wonder how  I figure this out, so I wanted to share the story to hopefully encourage you. I have subscribed to the [Android subreddit](https://www.reddit.com/r/androiddev/) through which I learn about the latest features. When I heard about the in-app reviews on Android, I was curious to implement it in my app too, but then I researched and learnt that Microsoft's Xamarin team would [not create a support package for this Android library](https://github.com/xamarin/GooglePlayServicesComponents/issues/221) like they usually do. But luckily I found [Patrick Getzman](https://github.com/PatGet)'s nuget but it only implemented PlayCore v1.7.2. Since v1.8 is needed for in-app reviews, so I [created an issue](https://github.com/PatGet/XamarinPlayCoreUpdater/issues/2). 
 
-22 days later, I had a deadline creeping, so I decided to procrastinate and find anything to do instead, so I decided to update that bindings library to v1.8. With many mouse scrolls and key taps, I followed [this video](https://www.youtube.com/watch?v=NyqxScrnJKw) by Jonathan Dick (LINK) and got the .AAR file for v1.8 [from Android](https://developer.android.com/guide/playcore#native). Then, I was able to use the [Official Android documentation](https://developer.android.com/guide/playcore/in-app-review/kotlin-java#java), the example already in [Pat's repository](https://github.com/PatGet/XamarinPlayCoreUpdater), along with lots of trial and error to figure out the renderer too. I will also be presenting this in October's [Rochester Xamarin meetup](https://twitter.com/rocxamarin). If you use this in your apps, please share screenshots with [me](https://twitter.com/rocxamarin), or you can just say Hi!
+22 days later, I had a deadline creeping, so I decided to procrastinate and find anything to do instead, so I decided to update that bindings library to v1.8. With many mouse scrolls and key taps, I followed [this video](https://www.youtube.com/watch?v=NyqxScrnJKw) by Jonathan Dick (LINK) and got the .AAR file for v1.8 [from Android](https://developer.android.com/guide/playcore#native). Then, I was able to use the [Official Android documentation](https://developer.android.com/guide/playcore/in-app-review/kotlin-java#java), the example already in [Pat's repository](https://github.com/PatGet/XamarinPlayCoreUpdater), along with lots of trial and error to figure out the native service too. I will also be presenting this in October's [Rochester Xamarin meetup](https://twitter.com/rocxamarin). If you use this in your apps, please share screenshots with [me](https://twitter.com/rocxamarin), or you can just say Hi!
