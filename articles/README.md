@@ -2,7 +2,7 @@
 ## In-App Reviews have come to Android for Xamarin developers!
 ### You can now launch in-app reviews in Android using Xamarin.
 
-Since the v1.8 release of Android's Play Core package in August 2020, Android users have been able to provide in-app reviews on Android for apps that implemented it. However, there were no binding libraries created for this, and so Xamarin developers were not able to implement this feature in Xamarin apps. But thanks to the recent update to this PlayCore nuget package, Xamarin developers are able to access implement it with ease.
+Since the v1.8 release of Android's Play Core library in August 2020, Android users have been able to provide in-app reviews on Android. However, there was no bindings library created for this version of Play Core, and so Xamarin developers were not able to implement this feature in Xamarin apps. But thanks to the recent update to [this PlayCore library](https://github.com/PatGet/XamarinPlayCoreUpdater), Xamarin developers are able to access implement it successfully.
 
 In-app reviews greatly improve the User Experience as users dislike being taken outside the app. Apple had provided this feature since iOS 10.3 released in March 2017, so it was highly anticipated on Android.
 
@@ -31,11 +31,12 @@ review.LaunchReview();
 ```
 
 #### Android Project:
-For the Android part, add the [PlayCore Nuget package](https://www.nuget.org/packages/PlayCore/) to your Android project, and then add the Custom Service for the IInAppReview interface. You can just add this [`InAppReviewService.cs`](https://gist.github.com/saamerm/bc3f7bd9e96bd4b027ddfaec3a0876a8) to your Droid project.
+For the Android part, add the latest [PlayCore Nuget package](https://www.nuget.org/packages/PlayCore/) to your Android project, and then add the Custom Service for the IInAppReview interface. You can just add this [`InAppReviewService.cs`](https://gist.github.com/saamerm/bc3f7bd9e96bd4b027ddfaec3a0876a8) to your Droid project.
+
+Alternatively, since [James Montemagno](https://twitter.com/JamesMontemagno) has already added the PlayCore Nuget to his [StoreReview plugin](https://github.com/jamesmontemagno/StoreReviewPlugin/pull/7), you can simply add [his Nuget package](https://www.nuget.org/packages/Plugin.StoreReview/), and then call `await CrossStoreReview.Current.RequestReview(false);` to achieve the same results.
 
 #### Testing
 Testing in-app reviews is tricky on Android, just as it is on iOS. There are many limitations to being able to test your app as you can [see here](https://developer.android.com/guide/playcore/in-app-review/test). Regardless of what you try, you won't be able to see the In-App review UI when built and distributed manually. You have to download the app from the Play Store, in order to see the UI. So, the easiest way to test this is by using Android's "Internal App Sharing". You can ensure your code is correct by comparing it to [this PR](https://github.com/PatGet/XamarinPlayCoreUpdater/pull/5) as well.
-
 
 ---
 
