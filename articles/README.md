@@ -10,10 +10,10 @@ In-App Reviews greatly improve the User Experience as users dislike being taken 
 
 ### Implementation
 
-Since [James Montemagno](https://twitter.com/JamesMontemagno) already has a popular [Store Review Plugin](https://www.nuget.org/packages/Plugin.StoreReview/), we partnered with him to make the feature more accessible through his Nuget. So now implementing this in your app is now a piece of cake! 
+Since [James Montemagno](https://twitter.com/JamesMontemagno) already has a popular [Store Review Plugin](https://www.nuget.org/packages/Plugin.StoreReview/), we partnered with him to make the feature more accessible through his Nuget. So implementing this in your app is now a piece of cake! 
 
 ##### Step 1 - Add the nuget
-For Xamarin Native or Xamarin.Forms developers, just [add the "Plugin StoreReview" nuget](https://docs.microsoft.com/en-us/visualstudio/mac/nuget-walkthrough) to your Core, Droid and iOS projects, and this also adds the Play Core bindings library.
+For Xamarin Native or Xamarin.Forms developers, just add v3 of the "Plugin StoreReview" nuget ([instructions](https://docs.microsoft.com/en-us/visualstudio/mac/nuget-walkthrough)) to your Core, Droid and iOS projects, and this also adds the Play Core bindings library.
 
 ##### Step 2 - Call `RequestReview()`
 Then, you can either hook up the `Clicked` action of a Button control to launch the In-App Review, or use a Command to bind the click action and launch this code in your ViewModel using this:
