@@ -1,5 +1,5 @@
 ###### IMPROVE THE ANDROID USER EXPERIENCE OF YOUR APP TODAY
-## In-App Reviews have come to Android for Xamarin developers!
+## In-App Reviews have come to Android for Xamarin!
 ### You can now launch in-app reviews in Android using Xamarin.
 
 Since the v1.8 release of Android's Play Core library in August 2020, Android users have been able to provide in-app reviews on Android. However, there was no bindings library created for this version of Play Core, and so Xamarin developers were not able to implement this feature in Xamarin apps. But thanks to the recent update to [this PlayCore library](https://github.com/PatGet/XamarinPlayCoreUpdater), Xamarin developers are able to implement it successfully.
